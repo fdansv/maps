@@ -1,0 +1,34 @@
+<html>
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+<body>
+<style>
+        @import url(../vendor/leaflet.css);
+        html, body {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            padding: 0;
+            margin: 0;
+            overflow:hidden;
+        }
+        #map {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+<div id="map">
+</div>
+<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+  <script>
+  var c = [85.0509214541355, -179.99655067920685]
+  var map = new L.Map("map", {center: c, zoom: 17})
+  L.tileLayer('./chroma/{z}/map_tile_{x}_{y}.png', {
+  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
+  }).addTo(map);
+  </script>
+</body>
+</html>
